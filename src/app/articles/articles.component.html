@@ -3,6 +3,7 @@
         *ngFor="let article of articles" 
         [article]="article"
         (deletedArticle)="delete($event)"
+        (showAuthor)="showAuthor($event)"
     >
     </app-article>
 </div>

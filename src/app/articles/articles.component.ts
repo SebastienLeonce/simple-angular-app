@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Article } from '../models/Article';
 import { ArticleService } from '../article.service';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-articles',
@@ -24,6 +23,10 @@ export class ArticlesComponent implements OnInit {
     this.articleService.deleteArticle(article.id).subscribe(value => {
       this.articles = this.articles.filter(value => value.id !== article.id);
     });
+  }
+
+  showAuthor(author: string) {
+    alert(author);
   }
 
 }

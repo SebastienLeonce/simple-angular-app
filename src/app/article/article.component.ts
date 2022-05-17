@@ -14,11 +14,18 @@ export class ArticleComponent implements OnInit {
   @Output()
   deletedArticle : EventEmitter<Article> = new EventEmitter();
 
+  @Output()
+  showAuthor : EventEmitter<string> = new EventEmitter();
+
   ngOnInit(): void {
   }
 
   delete(){
     this.deletedArticle.emit(this.article);
+  }
+
+  showAuthorName(){
+    this.showAuthor.emit(this.article.author);
   }
 
 }
