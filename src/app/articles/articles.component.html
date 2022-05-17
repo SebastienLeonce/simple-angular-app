@@ -1,9 +1,13 @@
 <div class="overflow-y-auto h-full flex flex-col space-y-4 self-center pr-4">
+    <div class="fixed">
+        <input type="text" class="form-input px-4 py-3 rounded-full w-[400px]" placeholder="Recherche d'article">
+    </div>
     <app-article 
         *ngFor="let article of articles" 
         [article]="article"
         (deletedArticle)="delete($event)"
         (showAuthor)="showAuthor($event)"
+        class="!mt-14"
     >
     </app-article>
 </div>
