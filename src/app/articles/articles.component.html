@@ -1,0 +1,8 @@
+<div class="overflow-y-auto h-3/4 flex flex-col space-y-4 self-center pr-4">
+    <app-article 
+        *ngFor="let article of articles" 
+        [article]="article"
+        (deletedArticle)="delete($event)"
+    >
+    </app-article>
+</div>
