@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../environments/environment';
 
 import { Article, ArticleCreation } from './models/Article';
 
@@ -13,22 +14,22 @@ export class ArticleService {
 
 
   public getArticles(): Observable<Article[]> {
-    return this.http.get<Article[]>("http://localhost:3000/articles?_sort=id&_order=desc");
+    return this.http.get<Article[]>(`${environment.apiUrl}/articles?_sort=id&_order=desc`);
   }
 
   public getTopArticles(): Observable<Article[]> {
-    return this.http.get<Article[]>("http://localhost:3000/articles?_sort=id&_order=desc&_page=1");
+    return this.http.get<Article[]>(`${environment.apiUrl}/articles?_sort=id&_order=desc&_page=1`);
   }
 
   public getArticle(id: number): Observable<Article> {
-    return this.http.get<Article>(`http://localhost:3000/articles/${id}`);
+    return this.http.get<Article>(`${environment.apiUrl}/articles/${id}`);
   }
 
   public deleteArticle(id: number): Observable<Article> {
-    return this.http.delete<Article>(`http://localhost:3000/articles/${id}`);
+    return this.http.delete<Article>(`${environment.apiUrl}/articles/${id}`);
   }
 
   public addArticle(article: ArticleCreation): Observable<Article> {
-    return this.http.post<Article>("http://localhost:3000/articles", article);
+    return this.http.post<Article>(`${environment.apiUrl}/articles`, article);
   }
 }
