@@ -13,7 +13,7 @@ export class ArticleService {
 
 
   public getArticles(): Observable<Article[]> {
-    return this.http.get<Article[]>("http://localhost:3000/articles");
+    return this.http.get<Article[]>("http://localhost:3000/articles?_page=1");
   }
 
   public getArticle(id: number): Observable<Article> {
