@@ -15,7 +15,8 @@ export class ArticleDetailComponent implements OnInit {
     title: "",
     content: "",
     author: "",
-    id: 0
+    id: 0,
+    date: new Date()
   };
 
   constructor(private route: ActivatedRoute, private router: Router, private articleService: ArticleService) {
