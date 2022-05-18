@@ -9,13 +9,15 @@ import { ArticleComponent } from './article/article.component';
 import { ArticlesComponent } from './articles/articles.component';
 import { ArticleService } from './article.service';
 import { ArticleCreationComponent } from './article-creation/article-creation.component';
+import { ArticleDetailComponent } from './article-detail/article-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ArticleComponent,
     ArticlesComponent,
-    ArticleCreationComponent
+    ArticleCreationComponent,
+    ArticleDetailComponent
   ],
   imports: [
     HttpClientModule,

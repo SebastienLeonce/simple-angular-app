@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Article } from '../models/Article';
+import { Router  } from '@angular/router';
 
 @Component({
   selector: 'app-article',
@@ -17,8 +18,9 @@ export class ArticleComponent implements OnInit {
   @Output()
   showAuthor : EventEmitter<string> = new EventEmitter();
 
-  ngOnInit(): void {
-  }
+  constructor(private route: Router ) { }
+
+  ngOnInit(): void { }
 
   delete(){
     this.deletedArticle.emit(this.article);
@@ -26,6 +28,10 @@ export class ArticleComponent implements OnInit {
 
   showAuthorName(){
     this.showAuthor.emit(this.article.author);
+  }
+
+  openDetails(){
+    this.route.navigate(['/article', this.article.id]);
   }
 
 }
