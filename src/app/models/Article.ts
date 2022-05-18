@@ -4,3 +4,5 @@ export interface Article {
     author: string;
     id: number;
 }
+
+export type ArticleCreation = Omit<Article, "id">;
