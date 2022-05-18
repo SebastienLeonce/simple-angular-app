@@ -15,9 +15,6 @@ export class ArticleComponent implements OnInit {
   @Output()
   deletedArticle : EventEmitter<Article> = new EventEmitter();
 
-  @Output()
-  showAuthor : EventEmitter<string> = new EventEmitter();
-
   constructor(private route: Router ) { }
 
   ngOnInit(): void { }
@@ -27,7 +24,7 @@ export class ArticleComponent implements OnInit {
   }
 
   showAuthorName(){
-    this.showAuthor.emit(this.article.author);
+    this.route.navigate(['/author', this.article.author]);
   }
 
   openDetails(){

@@ -26,10 +26,6 @@ export class ArticlesComponent implements OnInit {
     });
   }
 
-  showAuthor(author: string) {
-    alert(author);
-  }
-
   searchKeyword(e: Event) {
     const keyword = (<HTMLInputElement>e.target).value;
     

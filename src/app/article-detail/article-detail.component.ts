@@ -34,8 +34,4 @@ export class ArticleDetailComponent implements OnInit {
     });
   }
 
-  showAuthor(author: string) {
-    alert(author);
-  }
-
 }

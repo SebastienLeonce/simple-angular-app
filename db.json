@@ -24,5 +24,17 @@
       "author": "Seb",
       "id": 4
     }
+  ], 
+  "authors": [
+    {
+      "name": "John Doe",
+      "bio": "Auteur célèbre du blog",
+      "id": 1
+    },
+    {
+      "name": "Seb",
+      "bio": "Meilleur auteur du blog",
+      "id": 2
+    }
   ]
 }
