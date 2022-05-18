@@ -23,4 +23,8 @@ export class ArticleService {
   public addArticle(article: Omit<Article, "id">): Observable<Article> {
     return this.http.post<Article>("http://localhost:3000/articles", article);
   }
+
+  public searchArticle(keyword: string): Observable<Article[]> {
+    return this.http.get<Article[]>(`http://localhost:3000/articles?q=${keyword}`);
+  }
 }

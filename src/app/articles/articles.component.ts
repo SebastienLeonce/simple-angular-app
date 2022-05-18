@@ -9,7 +9,8 @@ import { ArticleService } from '../article.service';
 })
 export class ArticlesComponent implements OnInit {
 
-  articles!: Article[];
+  articles   !: Article[];
+  searchText ?: string;
 
   constructor(private articleService: ArticleService) { }
 
@@ -27,6 +28,14 @@ export class ArticlesComponent implements OnInit {
 
   showAuthor(author: string) {
     alert(author);
+  }
+
+  searchKeyword(e: Event) {
+    const keyword = (<HTMLInputElement>e.target).value;
+    
+    this.articleService.searchArticle(keyword).subscribe(value => {
+      this.articles = value;
+    });
   }
 
 }
