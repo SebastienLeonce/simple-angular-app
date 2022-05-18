@@ -10,6 +10,7 @@ import { Article } from '../models/Article';
 export class TopArticlesComponent implements OnInit {
 
   articles   !: Article[];
+  filteredArticles ?: Article[];
   searchText ?: string;
 
   constructor(private articleService: ArticleService) { }
@@ -17,6 +18,7 @@ export class TopArticlesComponent implements OnInit {
   ngOnInit() {
     this.articleService.getTopArticles().subscribe(value => {
       this.articles = value;
+      this.filteredArticles = value;
     });
   }
 
@@ -29,9 +31,7 @@ export class TopArticlesComponent implements OnInit {
   searchKeyword(e: Event) {
     const keyword = (<HTMLInputElement>e.target).value;
     
-    this.articleService.searchArticle(keyword).subscribe(value => {
-      this.articles = value;
-    });
+    this.filteredArticles = this.articles.filter(value => value.title.includes(keyword) || value.content.includes(keyword) || value.author.includes(keyword));
   }
 
 }

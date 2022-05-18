@@ -10,7 +10,7 @@
         >
     </div>
     <app-article 
-        *ngFor="let article of articles" 
+        *ngFor="let article of filteredArticles" 
         [article]="article"
         (deletedArticle)="delete($event)"
         class="!mt-14"
