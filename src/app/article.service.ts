@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../environments/environment';
 
 import { Article, ArticleCreation } from './models/Article';
 
@@ -21,11 +22,11 @@ export class ArticleService {
   }
 
   public getArticle(id: number): Observable<Article> {
-    return this.http.get<Article>(`http://localhost:3000/articles/${id}`);
+    return this.http.get<Article>(`${environment.apiUrl}/articles/${id}`);
   }
 
   public deleteArticle(id: number): Observable<Article> {
-    return this.http.delete<Article>(`http://localhost:3000/articles/${id}`);
+    return this.http.delete<Article>(`${environment.apiUrl}/articles/${id}`);
   }
 
   public addArticle(article: ArticleCreation): Observable<Article> {
