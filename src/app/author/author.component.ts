@@ -12,9 +12,9 @@ export class AuthorComponent implements OnInit {
 
   @Input()
   author : Author = {
-    name: '',
+    name: 'Inconnu',
     id: 0,
-    bio: '',
+    bio: 'Pas d\'information sur cet auteur',
   };
 
   constructor(private route: ActivatedRoute, private authorService : AuthorService) { }

@@ -11,6 +11,7 @@ import { ArticleService } from './article.service';
 import { ArticleCreationComponent } from './article-creation/article-creation.component';
 import { ArticleDetailComponent } from './article-detail/article-detail.component';
 import { AuthorComponent } from './author/author.component';
+import { TopArticlesComponent } from './top-articles/top-articles.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { AuthorComponent } from './author/author.component';
     ArticlesComponent,
     ArticleCreationComponent,
     ArticleDetailComponent,
-    AuthorComponent
+    AuthorComponent,
+    TopArticlesComponent
   ],
   imports: [
     HttpClientModule,
